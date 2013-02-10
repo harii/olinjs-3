@@ -1,5 +1,19 @@
 extends layout
 
 block content
-  h1= title
-  p Welcome to #{title}
+  h2 Welcome to #{title}
+  br
+  strong
+    a(href="/ingredient/new")
+        | Want to add a new ingredient?
+    br
+    br
+    a(href="/order/new")
+        | Or maybe you'd like to order a new burger?
+    br
+    br
+    a(href="/orders")
+        | Or possibly, you'd just like to look at existing orders.
+  br
+  br
+  img(src="http://3.bp.blogspot.com/-5p8nBEopAio/TWSNm_NoWpI/AAAAAAAAAkE/HsSNMS6Q_wg/s1600/double-ba-burger.jpg", style="width:818.3px; height:595px;")

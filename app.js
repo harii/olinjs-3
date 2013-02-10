@@ -1,13 +1,13 @@
+// PRETTY MUCH COPIED ABEKIM'S CODE SO I CAN LEARN IT BETTER
 
 /**
  * Module dependencies.
  */
 
-var ingredient = require('./routes/ingredient');
-
 var express = require('express')
   , routes = require('./routes')
-  , user = require('./routes/user')
+  , ingredient = require('./routes/ingredient')
+  , order = require('./routes/order')
   , http = require('http')
   , path = require('path');
 
@@ -30,8 +30,12 @@ app.configure('development', function(){
 });
 
 app.get('/', routes.index);
-app.get('/users', user.list);
-app.get('/ingredients/new', ingredient.new);
+app.get('/ingredient/new', ingredient.submitNew);
+app.post('/ingredient/create', ingredient.create);
+app.get('/orders',order.list);
+app.post('/orders', order.delete);
+app.get('/order/new', order.new);
+app.post('/order/new', order.create);
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log("Express server listening on port " + app.get('port'));
