@@ -11,9 +11,6 @@ weird data contamination issues, you should always use this
 connect command, and have a separate DB for each app.
 */
 
-mongoose.connect('mongodb://localhost/burgers');
-
-
 /* Schema time!
 */
 
